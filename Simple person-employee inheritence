@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+
+class Person{
+
+public:
+    int age;
+    string name;
+protected:
+    string companyName;
+    void setCompanyName(string cName){
+        companyName = cName;
+    }
+
+
+};
+class employee: public Person{
+protected:
+    int salary;
+public:
+    void askDetail(void){
+        cout<<"\nYour name: ";
+        cin>>name;
+        cout<<"\nhow old are you: ";
+        cin>>age;
+        cout<<"\nCompany name: ";
+        cin>>companyName;
+        setCompanyName(companyName);
+        cout<<"\nAnd salary: ";
+        cin>>salary;
+    }
+    void showDetail(void){
+    cout<<"\nName: "<<name;
+    cout<<"\nage: "<<age;
+    cout<<"\nCompany name: "<<companyName;
+    cout<<"\nSalary: "<<salary;
+    }
+};
+int main(){
+    short int i=0;
+    employee emp[2];
+    while(i!=2){
+        cout<<"\n\t\t\tEnter employee "<<i+1<<" Details\n";
+        emp[i].askDetail();
+     i++;
+    }
+
+    while(i!=2){
+        cout<<"\n\t\t\tEmployee "<<i+1<<" Details\n";
+        emp[i].showDetail();
+     i++;
+    }
+    return 0;
+}
+
